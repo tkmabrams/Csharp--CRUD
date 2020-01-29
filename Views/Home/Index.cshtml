@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Welcome to CRUDelicious</h1>
+
+<p>Check out some recent dishes</p>
+<a asp-action="AddDish" asp-controller="Home">Add a dish</a>
+
+@foreach (var d in ViewBag.Dishes)
+{
+    <p><a href="/@d.DishId">@d.Name</a> by @d.Chef</p>
+}

@@ -1,0 +1,29 @@
+@model Dish
+
+<a asp-action="Index" asp-controller="Home">Home</a>
+<form asp-action="edit" asp-controller="Home" method="post">
+    <label asp-for="Name"></label><br>
+    <input asp-for="Name" value="@ViewBag.singleDish.Name"><br>
+    <label asp-for="Chef"></label><br>
+    <input asp-for="Chef" value="@ViewBag.singleDish.Chef"><br>
+    <label asp-for="Tastiness"></label>
+    <select asp-for="Tastiness">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select><br>
+    <label asp-for="Calories"></label><br>
+    <input asp-for="Calories" value="@ViewBag.singleDish.Calories"><br>
+    <label asp-for="Description"></label><br>
+    <textarea asp-for="Description" cols="50" rows="4" value="@ViewBag.singleDish.Description"></textarea><br>
+    <input type="submit" value="Submit" class="btn btn-success">
+</form>
+<div>
+    <span asp-validation-for="Name"></span>
+    <span asp-validation-for="Chef"></span>
+    <span asp-validation-for="Tastiness"></span>
+    <span asp-validation-for="Calories"></span>
+    <span asp-validation-for="Description"></span>
+</div>
